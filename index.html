@@ -101,8 +101,10 @@
 
             // Mengirim data menggunakan metode Fetch API
             fetch(urlWebApps + "?" + searchParams.toString(), {
-                method: 'POST'
-            })
+               method: 'POST',
+               mode: 'cors',
+               redirect: 'follow'
+           })
             .then(response => response.json())
             .then(data => {
                 if(data.result === "success") {
